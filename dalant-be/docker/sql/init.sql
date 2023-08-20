@@ -31,3 +31,15 @@ create table if not exists church (
     church_name character varying(50) not null
 );
 
+create table if not exists groups (
+   group_id character varying(100) primary key not null,
+   created_by character varying(100) not null,
+   created_dt timestamp(6) without time zone not null,
+   updated_by character varying(100),
+   updated_dt timestamp(6) without time zone,
+   group_name character varying(50) not null,
+   church_id character varying(100),
+   foreign key (church_id) references public.church (church_id)
+       match simple on update no action on delete no action
+);
+

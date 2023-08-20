@@ -23,3 +23,12 @@ VALUES
     ('sub-category-10', 'test-user', CURRENT_TIMESTAMP, 'test-user', CURRENT_TIMESTAMP, null, 'sub-category-4-1', 'Y', 'category-4'),
     ('sub-category-11', 'test-user', CURRENT_TIMESTAMP, 'test-user', CURRENT_TIMESTAMP, null, 'sub-category-4-2', 'Y', 'category-4'),
     ('sub-category-12', 'test-user', CURRENT_TIMESTAMP, 'test-user', CURRENT_TIMESTAMP, null, 'sub-category-4-3', 'N', 'category-4');
+
+INSERT INTO church (church_id, church_name, created_by, created_dt, updated_by, updated_dt)
+VALUES ('church-1', '000 교회', 'test-user', CURRENT_TIMESTAMP, 'test-user', CURRENT_TIMESTAMP);
+
+INSERT INTO groups (group_id, church_id, group_name, created_by, created_dt, updated_by, updated_dt)
+VALUES
+    ('group-1', 'church-1', 'vision', 'test-user', CURRENT_TIMESTAMP, 'test-user', CURRENT_TIMESTAMP),
+    ('group-2', 'church-1', 'bethel', 'test-user', CURRENT_TIMESTAMP, 'test-user', CURRENT_TIMESTAMP),
+    ('group-3', 'church-1', 'grace', 'test-user', CURRENT_TIMESTAMP, 'test-user', CURRENT_TIMESTAMP);

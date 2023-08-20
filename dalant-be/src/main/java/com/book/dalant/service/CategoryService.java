@@ -4,7 +4,6 @@ import com.book.dalant.config.Constants;
 import com.book.dalant.config.OffsetPageRequest;
 import com.book.dalant.constants.CategoryConstant;
 import com.book.dalant.domain.CategoryEntity;
-import com.book.dalant.domain.SubCategoryEntity;
 import com.book.dalant.exception.BusinessException;
 import com.book.dalant.repository.CategoryRepository;
 import com.book.dalant.repository.SubCategoryRepository;
@@ -17,9 +16,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -38,7 +35,7 @@ public class CategoryService {
             pageSize,
             Sort.by(Sort.Direction.ASC, "categoryName")
         );
-
+        
         return (categoryType == null ?
                 categoryRepository.findAll(pageable)
                 : categoryRepository.findAll(CategorySpecification.filterCategoryType(categoryType), pageable))
