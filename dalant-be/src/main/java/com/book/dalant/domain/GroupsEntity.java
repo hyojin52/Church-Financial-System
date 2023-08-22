@@ -15,7 +15,7 @@ public class GroupsEntity extends AbstractAuditingEntity {
   @Column(name = "GROUP_ID", columnDefinition = "VARCHAR(100)", nullable = false, length = 100)
   private String groupId;
   
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "CHURCH_ID")
   private ChurchEntity church;
   

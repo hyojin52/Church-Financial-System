@@ -16,7 +16,7 @@ public class SubCategoryEntity extends AbstractAuditingEntity {
     @Column(name = "SUB_CATEGORY_ID", columnDefinition = "VARCHAR(100)", nullable = false, length = 100)
     private String subCategoryId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CATEGORY_ID")
     private CategoryEntity category;
 
@@ -24,7 +24,7 @@ public class SubCategoryEntity extends AbstractAuditingEntity {
     private String subCategoryName;
 
     @Convert(converter = YesNoConverter.class)
-    @Column(name = "USER_TYPE_YN", length = 100, nullable = false)
+    @Column(name = "USER_TYPE_YN", length = 1, nullable = false)
     private boolean userTypeYn;
 
     @Column(name = "SUB_CATEGORY_DESC", length = 500)

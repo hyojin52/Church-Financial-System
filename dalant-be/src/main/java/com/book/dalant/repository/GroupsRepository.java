@@ -5,9 +5,9 @@ import com.book.dalant.domain.GroupsEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
+@Repository
 public interface GroupsRepository extends JpaRepository<GroupsEntity, String> {
   Page<GroupsEntity> findByChurch(ChurchEntity church, Pageable pageable);
 }
