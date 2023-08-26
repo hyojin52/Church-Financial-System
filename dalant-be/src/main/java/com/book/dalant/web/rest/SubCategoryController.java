@@ -2,7 +2,7 @@ package com.book.dalant.web.rest;
 
 import com.book.dalant.config.Constants;
 import com.book.dalant.service.SubCategoryService;
-import com.book.dalant.web.rest.vm.CategoryVM;
+import com.book.dalant.web.rest.vm.SubCategoryVM;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +23,7 @@ public class SubCategoryController {
   )
   public Result createSubCategory(
           @PathVariable String categoryId,
-          @RequestBody CategoryVM.SubCreate categoryVm) {
+          @RequestBody SubCategoryVM.Create categoryVm) {
     return Result.withMessage(
             Constants.CommonCode.CREATED,
             "Creation of sub-category succeeded.",
@@ -49,7 +49,7 @@ public class SubCategoryController {
   )
   public Result updateSubCategory(
           @PathVariable String subCategoryId,
-          @RequestBody CategoryVM.SubUpdate subCategoryVm) {
+          @RequestBody SubCategoryVM.Update subCategoryVm) {
     return Result.ok(subCategoryService.updateSubCategory(subCategoryId, subCategoryVm));
   }
   

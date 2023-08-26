@@ -8,7 +8,7 @@ import com.book.dalant.exception.BusinessException;
 import com.book.dalant.repository.CategoryRepository;
 import com.book.dalant.repository.SubCategoryRepository;
 import com.book.dalant.service.dto.CategoryDTO;
-import com.book.dalant.web.rest.specification.CategorySpecification;
+import com.book.dalant.service.specification.CategorySpecification;
 import com.book.dalant.web.rest.vm.CategoryVM;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

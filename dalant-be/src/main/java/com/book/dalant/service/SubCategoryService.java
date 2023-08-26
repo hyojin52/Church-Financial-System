@@ -6,6 +6,7 @@ import com.book.dalant.repository.CategoryRepository;
 import com.book.dalant.repository.SubCategoryRepository;
 import com.book.dalant.service.dto.CategoryDTO;
 import com.book.dalant.web.rest.vm.CategoryVM;
+import com.book.dalant.web.rest.vm.SubCategoryVM;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +23,7 @@ public class SubCategoryService {
   
   public boolean createSubCategory(
           String categoryId,
-          CategoryVM.SubCreate subCategoryVm) {
+          SubCategoryVM.Create subCategoryVm) {
     CategoryEntity category = categoryRepository.findById(categoryId).orElseThrow(NoSuchElementException::new);
     SubCategoryEntity subCategory = new SubCategoryEntity();
     subCategory.setCategory(category);
@@ -42,7 +43,7 @@ public class SubCategoryService {
   
   public CategoryDTO.SubCategory updateSubCategory(
           String subCategoryId,
-          CategoryVM.SubUpdate subCategoryVm) {
+          SubCategoryVM.Update subCategoryVm) {
     SubCategoryEntity subCategory = subCategoryRepository.findById(subCategoryId).orElseThrow(NoSuchElementException::new);
     subCategory.setSubCategoryName(subCategoryVm.getSubCategoryName());
     subCategory.setSubCategoryDesc(subCategoryVm.getSubCategoryDesc());

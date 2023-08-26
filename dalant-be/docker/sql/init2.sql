@@ -32,3 +32,8 @@ VALUES
     ('group-1', 'church-1', 'vision', 'test-user', CURRENT_TIMESTAMP, 'test-user', CURRENT_TIMESTAMP),
     ('group-2', 'church-1', 'bethel', 'test-user', CURRENT_TIMESTAMP, 'test-user', CURRENT_TIMESTAMP),
     ('group-3', 'church-1', 'grace', 'test-user', CURRENT_TIMESTAMP, 'test-user', CURRENT_TIMESTAMP);
+
+INSERT INTO users (user_id, created_by, created_dt, updated_by, updated_dt, birth_date, mobile_number, position, user_active_yn, user_name)
+VALUES
+    ('user-1', 'test-user', CURRENT_TIMESTAMP, 'test-user', CURRENT_TIMESTAMP, '20230101', '+821012341234', 'ELDER', 'Y', '홍길동1'),
+    ('user-2', 'test-user', CURRENT_TIMESTAMP, 'test-user', CURRENT_TIMESTAMP, '20230102', '+821012341234', 'PASTOR', 'Y', '홍길동2');

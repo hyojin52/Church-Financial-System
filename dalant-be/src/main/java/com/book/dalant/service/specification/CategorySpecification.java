@@ -1,4 +1,4 @@
-package com.book.dalant.web.rest.specification;
+package com.book.dalant.service.specification;
 
 import com.book.dalant.constants.CategoryConstant;
 import com.book.dalant.domain.CategoryEntity;
